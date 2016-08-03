@@ -1,0 +1,33 @@
+body{
+    color: #1d2129;
+}
+#contentdiv{
+    width: 900px;
+    border-width: 2px;
+    border-style: dotted;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    margin: 0 auto;
+    background: linear-gradient(white, #D3D8E8);
+}
+input{
+    font-size:30px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bdc7d8;
+}
+.centered{
+    text-align: center;
+}
+.mybutton{
+    font-size: 25px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 5px;
+    border: 1px solid blue;
+}

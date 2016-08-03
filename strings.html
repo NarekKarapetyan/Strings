@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Working with strings</title>
+    <link rel="stylesheet" type="text/css" href="strings.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+</head>
+<body>
+    <div id="contentdiv">
+        <div class="centered">
+        <input type="text" placeholder="Enter your string here" id="stringinput"></input>
+    </div>
+    <div class="centered" >
+        <input type="text" placeholder="Type the character" id="charinput"></input>
+    </div>
+    <div class="centered">
+        <button class="mybutton" id="button1">Find</button>
+    </div>
+    <div class="centered">
+        <input type="text" placeholder="Quantity" id="charnumber"></input>
+    </div>
+    <div class="centered">
+        <input type="text" placeholder="New character" id="newchar"></input>
+    </div>
+    <div class="centered">
+        <button class="mybutton" id="button2">Replace</button>
+    </div>
+    <div class="centered">
+        <input type="text" placeholder="Final result" id="result"></input>
+    </div>
+    </div>
+
+    <script>
+    $('document').ready(function() {
+
+
+        var quantity=0;
+        $('#charinput').on("change",function() {
+            quantity=0;
+        });
+        $('#button1').on("click",function() {
+            //var character = $('#charinput').val();
+            var character = document.getElementById('charinput').value;
+            //var mystring = $('#stringinput').val();
+            var mystring = document.getElementById('stringinput').value;
+            for(var i=0;i<mystring.length;i++){
+                if(mystring.charAt(i) == character){
+                    quantity++;
+                }
+            }
+            $('#charnumber').val(quantity);
+            quantity=0;
+            var newcharacter;
+            $('#newchar').on("change",function() {
+                newcharacter = document.getElementById('newchar').value;
+                console.log(newcharacter);
+                });
+                $('#button2').on("click",function() {
+                    finalstring = mystring;
+                    /*for(var i=0;i<finalstring.length;i++){
+                        if(finalstring.charAt(i) == character){
+                            var currentchar = finalstring.charAt(i);
+                            var first = new RegExp(currentchar,"g");
+                            var second = new RegExp(newcharacter, "g");
+                            finalstring.replace(first, second);
+                            console.log(finalstring);
+                        }
+                    } */
+
+                            var stringarray = finalstring.split("");
+                            for(var j=0;j<finalstring.length;j++){
+                                if(stringarray[j] == character){
+                                    stringarray[j] = newcharacter;
+                                }
+                            }
+                            finalstring = stringarray.join("");
+
+
+                    $('#result').val(finalstring);
+
+            });
+    });
+
+    });
+
+    </script>
+</body>
+</html>
